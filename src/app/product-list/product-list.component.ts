@@ -12,6 +12,8 @@ import { MatTableDataSource } from '@angular/material/table';
 
 import {MatSnackBar} from '@angular/material/snack-bar';
 
+
+
 @Component({
   selector: 'app-product-list',
   imports: [ProductCardComponent, CommonModule, MatPaginatorModule],
@@ -82,7 +84,10 @@ export class ProductListComponent {
         // asignar storageTemp a this.listProducts
         this.listProducts = JSON.parse(storageTemp || '[]')
         this.dataSource.data = this.listProducts
-        this.openSnackBar('Product deleted', 'Close')
+        this.openSnackBar(
+          'Product deleted', 
+          'Close'
+        )
 
         // this.listProducts = JSON.parse(storageTemp)
         // this.productsService.productsLocal = products
@@ -94,15 +99,17 @@ export class ProductListComponent {
   private _snackBar = inject(MatSnackBar);
 
   openSnackBar(message: string, action: string) {
+    
     this._snackBar.open(message, action, {
       duration: 2000,
       horizontalPosition: 'right',
-      verticalPosition: 'top',
-    });
+      verticalPosition: 'top'
+    })
   }
 
   addCar(product: Product){
-    this.productsService.addCar(product)    
+    this.productsService.addCar(product)
+    this.openSnackBar('Product added to cart', 'Close') 
   }
 
   // ✅ Se asigna el paginador después de la inicialización del componente
