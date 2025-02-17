@@ -60,7 +60,10 @@ export class ProductsService {
     const storedProducts = localStorage.getItem('products')
     if(storedProducts){
       const products = JSON.parse(storedProducts)
-      return  of(products.filter((product: Product) => product.title.toLowerCase().includes(search.toLowerCase())))
+      return  of(products.filter((product: Product) => 
+        product.title.toLowerCase().includes(search.toLowerCase()) ||
+        product.category.toLowerCase().includes(search.toLowerCase())
+    ))
     }
     return of(this.productsLocal)
   }
