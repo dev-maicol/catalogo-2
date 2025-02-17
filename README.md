@@ -1,3 +1,8 @@
+# Information
+Deploy: https://catalogo-2-kappa.vercel.app/
+
+Project developed in module II of the Diploma in Full Stack Web Development at Univalle
+
 # Catalogo2
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.3.
