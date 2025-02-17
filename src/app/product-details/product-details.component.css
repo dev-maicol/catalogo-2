@@ -1,0 +1,35 @@
+.contenedor{
+  margin: 4rem;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.example-card {
+  max-width: 40%;
+  /* width: 100%; */
+  overflow: hidden;
+  margin: 1rem;
+}
+
+img {
+  max-width: fit-content;
+  max-height: auto;
+  aspect-ratio: 1/1;
+}
+
+mat-icon{
+  /* Sombrea alrededor del icono */
+  /* text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.714);  */
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.799));
+}
+.button-return{
+  display: inline;
+}
+.return-button{
+  color: rgb(79, 79, 255);
+}
+

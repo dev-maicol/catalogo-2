@@ -1,0 +1,21 @@
+<!-- <p>Product List</p> -->
+<section>
+  <div *ngIf="errorMessage" class="alert-danger">
+    {{ errorMessage }}
+  </div>
+  <div *ngIf="listProducts.length > 0; else noProducts" class="container">
+    <app-product-card 
+    *ngFor="let product of dataSource.connect() | async" 
+    [product]="product"
+    (productSelected)="goToDetail($event)"
+    (productDeleted)="removeProduct($event)"
+    (productAddCar)="addCar($event)"
+     />
+
+  </div>
+  <mat-paginator [pageSize]="3" [pageSizeOptions]="[3, 6, 12, 24]" showFirstLastButtons></mat-paginator>
+
+  <ng-template #noProducts >
+    <p>No hay productos disponibles ☹.</p>
+  </ng-template>
+</section>

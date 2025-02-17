@@ -1,0 +1,22 @@
+div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem;
+  }
+  app-product-card{
+    margin: .5rem;
+  }
+  .alert-danger{
+    color: rgb(254, 73, 73);
+    background-color: rgb(255, 204, 204);
+    border-color: rgb(255, 153, 153);
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+  
+  }
+  section{
+    text-align: center;
+  }

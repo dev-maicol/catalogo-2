@@ -1,0 +1,36 @@
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 1rem;
+}
+app-product-card{
+  margin: .5rem;
+}
+.alert-danger{
+  color: rgb(254, 73, 73);
+  background-color: rgb(255, 204, 204);
+  border-color: rgb(255, 153, 153);
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+
+}
+section{
+  text-align: center;
+}
+
+mat-paginator {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.728); /* Para que no se superponga con el contenido */
+  z-index: 1000; /* Asegura que quede sobre otros elementos */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para separarlo */
+}
+
+.container{
+  padding-bottom: 5rem;
+}

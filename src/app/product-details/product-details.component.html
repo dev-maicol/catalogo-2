@@ -1,0 +1,48 @@
+<div class="contenedor">
+  <h2>
+    <div mat-card-avatar class="button-return">
+      <button mat-icon-button matTooltip="Return" (click)="backToPage()">
+        <mat-icon class="return-button">arrow_back</mat-icon>
+      </button>
+    </div>
+    Product details
+  </h2>
+  <div class="cards">
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <mat-card-title>{{ product.title}}</mat-card-title>
+        <mat-card-subtitle>{{ product.category}}</mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <p>
+          {{ product.description}}
+        </p>
+        <p>{{ product.price}} $</p>
+        <p>Availability: {{ product.rating.count}}</p>
+        
+
+        <mat-icon style="color: yellow;" *ngFor="let num of [].constructor(rateProduct); let i = index" aria-hidden="false" aria-label="Example home icon" fontIcon="star"></mat-icon>
+        @if (rateProduct) {
+          <mat-icon *ngFor="let num of [].constructor(5 - rateProduct); let i = index" aria-hidden="false" aria-label="Example home icon" fontIcon="star_rate"></mat-icon>
+        }
+
+      </mat-card-content>
+      
+    </mat-card>
+    <mat-card class="example-card" appearance="outlined">
+      
+      <img 
+      mat-card-image 
+      src="{{ product.image}}" 
+      alt="{{ product.title}}"
+      >
+      
+      <mat-card-actions>
+        <!-- <button mat-button>Add to Car</button> -->
+        <button mat-button (click)="backToPage()">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

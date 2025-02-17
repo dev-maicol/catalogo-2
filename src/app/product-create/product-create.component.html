@@ -1,0 +1,69 @@
+<div class="container">
+  <h2>Add product</h2>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="input-id">
+      <mat-label>ID</mat-label>
+      <input matInput id="id" formControlName="id" placeholder="ID of product" [disabled]="true" type="number">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput id="title" formControlName="title" placeholder="Title">
+    </mat-form-field>
+    <mat-form-field floatLabel="always">
+      <mat-label>Price</mat-label>
+      <input matInput id="price" formControlName="price" type="number" class="example-right-align" placeholder="0" />
+      <span matTextPrefix>$&nbsp;</span>
+      <span matTextSuffix>.00</span>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput id="description" formControlName="description" placeholder="Description of product"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select id="category" formControlName="category">
+        <mat-option value="men's clothing">men's clothing</mat-option>
+        <mat-option value="women's clothing">women's clothing</mat-option>
+        <mat-option value="jewelery">jewelery</mat-option>
+        <mat-option value="electronics">electronics</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Image URL</mat-label>
+      <textarea matInput id="image" formControlName="image" placeholder="Image URL"></textarea>
+    </mat-form-field>
+    <div formGroupName="rating">
+      <mat-form-field floatLabel="always">
+        <mat-label>Rating rate</mat-label>
+        <input matInput id="rate" formControlName="rate" type="number" class="example-right-align" placeholder="0" />
+        <!-- <span matTextPrefix>$&nbsp;</span> -->
+        <span matTextSuffix>.00</span>
+      </mat-form-field>
+      <mat-form-field floatLabel="always">
+        <mat-label>Rating count</mat-label>
+        <input matInput id="count" formControlName="count" type="number" class="example-right-align" placeholder="0" />
+        <!-- <span matTextPrefix>$&nbsp;</span> -->
+        <span matTextSuffix>.00</span>
+      </mat-form-field>
+
+    </div>
+    <!-- <button type="submit">Agregar</button> -->
+    <button mat-stroked-button type="submit" [disabled]="productForm.invalid">Add</button>
+    <button mat-flat-button (click)="backToPage()">Cancel</button>
+    <!-- <button (click)="backToPage()" class="btn-retornar">Cancelar</button> -->
+
+  </form>
+</div>
+<!-- <button mat-flat-button (click)="backToPage()">Cancel</button> -->
+
+<!-- <mat-form-field>
+  <mat-label>Message</mat-label>
+  <input matInput value="Disco party!" #message>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Action</mat-label>
+  <input matInput value="Dance" #action>
+</mat-form-field> -->
+
+<!-- <button mat-stroked-button (click)="openSnackBar('Mensajito ✔', 'Cerrar')">Show snack-bar</button> -->

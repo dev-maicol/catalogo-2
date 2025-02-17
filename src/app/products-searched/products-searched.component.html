@@ -1,0 +1,19 @@
+<section>
+  <!-- <div *ngIf="errorMessage" class="alert-danger">
+    {{ errorMessage }}
+  </div> -->
+  <div mat-card-avatar class="button-return">
+    <button mat-icon-button matTooltip="Return" (click)="backToPage()">
+      <mat-icon class="return-button">arrow_back</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="listProducts.length > 0; else noProducts">
+    <app-product-card *ngFor="let product of listProducts" [product]="product" (productSelected)="goToDetail($event)"
+      (productDeleted)="removeProduct($event)" (productAddCar)="addCar($event)" />
+
+  </div>
+
+  <ng-template #noProducts>
+    <p>No hay productos disponibles ☹.</p>
+  </ng-template>
+</section>

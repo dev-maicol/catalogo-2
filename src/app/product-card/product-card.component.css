@@ -1,0 +1,36 @@
+.example-card {
+  max-width: 250px;
+  width: 100%;
+  overflow: hidden;
+}
+
+img{
+  max-width: fit-content;
+  min-height: auto;
+  aspect-ratio: 1/1;
+}
+mat-card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;  /* Limita a 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;       /* Oculta el texto sobrante */
+  text-overflow: ellipsis;
+  max-width: 100%;
+
+  line-clamp: 1; /* Propiedad estándar (aún no soportada en todos los navegadores) */
+}
+mat-card-content p{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;  /* Limita a 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;       /* Oculta el texto sobrante */
+  text-overflow: ellipsis;
+  max-width: 100%;
+
+  line-clamp: 3; /* Propiedad estándar (aún no soportada en todos los navegadores) */
+}
+
+.close-button:hover{
+  /* background: rgb(236, 70, 70); */
+  color: rgb(236, 70, 70);
+}
