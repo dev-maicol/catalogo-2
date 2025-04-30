@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 
 import {MatIconModule} from '@angular/material/icon';
@@ -14,13 +14,31 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+
+import { ContactPageComponent } from './contact-page/contact-page.component';
+
+import {
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatButtonModule, MatIconModule, MatTooltipModule, MatBadgeModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule],
+  imports: [RouterOutlet, MatButtonModule, MatIconModule, MatTooltipModule, MatBadgeModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatDialogModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
+
+  readonly dialog = inject(MatDialog);
+
+  openDialog() {
+    this.dialog.open(ContactPageComponent);
+  }
 
   productsSearch: FormGroup
 
@@ -29,7 +47,7 @@ export class AppComponent {
   constructor(private router:Router, private productsService: ProductsService){
     this.productsSearch = new FormGroup({
       search: new FormControl('', [Validators.minLength(3)]),
-      
+
     })
   }
 
